@@ -1,4 +1,3 @@
-# Curso-Profesional-de-Python
 # Curso Profesional de Python
 
 # 1. ****¿Qué necesitas saber para tomar el curso?****
@@ -346,3 +345,122 @@ Found 1 error in 1 file (checked 1 source file)
 ```
 
 El resultado quiere decir que ha encontrado un error de compatibilidad de datos, en este caso se esperaba un string, pero le estamos pasando un entero.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23898edd-4223-4779-bafc-57626e3c6818/Untitled.png)
+
+```python
+"""Python module to check  if a number is prime :3"""
+
+def sqrt_number(number: int) -> int:
+    number = int(number**(1/2))
+    return number
+
+def is_prime(number: int) -> bool:
+    if number <= 1:
+        return False
+# check for 2 to sqrt to number
+    for i in range(2,sqrt_number(number)+1):
+        if number%i == 0:
+            return False
+
+    return True
+
+def run():
+    print(is_prime(6))
+
+if __name__ == '__main__':
+    run()
+```
+
+Cuando ejecuto el archivo de Python no se evidencia que no tiene problemas en la asignación del tipado.
+
+`$ mypy reto_prime_numbers.py`
+
+`Success: no issues found in 1 source file`
+
+# 7. Scope: Alcance de las variables
+
+¿Hacia donde va una variable cuando la creamos?
+
+Una variable sólo está disponible dentro de la región en donde fue creada
+
+```python
+#local scope
+def my_fun():
+	y = 5 
+	print(y)
+```
+
+Por ejemplo esta función tiene su propio scope, todo su propio alcance, está definida en la región en donde fue creada y no puede usar usada fuera de ella.
+
+```python
+#global scope
+y = 5
+
+def my_fun():
+	print(y)
+
+def my_other_fun():
+	print(y)
+
+my_other_fun()
+fun()
+```
+
+```python
+z = 5
+def my_func():
+	z = 3
+	print(z)
+
+print(my_func())
+
+print(z)
+
+3 
+5
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8ae05c75-027d-4cdb-bf0a-066a8c3d02e0/Untitled.png)
+
+# 8. Closures
+
+Es un concepto usado en backend y ciencia de datos
+
+## Nested functions
+
+Es una tecnica que se da cuando una variable que está en un scope superior, es recordada por una función que está en un scope inferior.
+
+Aunque ese scope sea eliminado después incluso.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/24fa9a80-1ebb-442f-a1a1-b8190b458c74/Untitled.png)
+
+En este ejemplo vemos que aunque se elimine la función main, yo puedo seguir accediendo.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16dd53d8-5242-4f63-aaca-e0be0fc59fc1/Untitled.png)
+
+## Reglas para encontrar un closure
+
+- Debemos tener un nested function
+- La nested function debe referenciar un valor de scope superior
+- La función que envuelve a la nested function debe retornarla también.
+
+Cuando estar serie de pasos se cumple, tenemos un Closure
+
+Este es un ejemplo de una prueba técnica:
+
+Puedo crear una variable para asignar el primer valor de x y luego usar esa variable para usar la segunda función nested.
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6d6194ec-9471-41a3-922f-3e5e4f8ff494/Untitled.png)
+
+## ¿Donde aparecen los Closures?
+
+En programación OO si se tiene una clase que sólo tiene un metodo se pueden aplicar los closures. Cómo alternativa. También con decoradores.
+
+# 9. Programando Closures
+
+Son in tipo de caso especial en el cual hay tres regles
+
+- Debemos tener un nested function
+- La nested function debe referenciar un valor de scope superior
+- La función que envuelve a la nested function debe retornarla también.
