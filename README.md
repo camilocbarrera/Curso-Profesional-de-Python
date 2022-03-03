@@ -464,3 +464,22 @@ Son in tipo de caso especial en el cual hay tres regles
 - Debemos tener un nested function
 - La nested function debe referenciar un valor de scope superior
 - La función que envuelve a la nested function debe retornarla también.
+
+```python
+def multiply_str(str):
+    def multiplyer(n):
+        return str * n 
+    return multiplyer
+
+def run():
+
+    name = multiply_str("Cris")
+    name(4)
+
+    print(name(4))
+
+if __name__ == '__main__':
+    run()
+```
+
+# 10. Decoradores
