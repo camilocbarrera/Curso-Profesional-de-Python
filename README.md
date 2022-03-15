@@ -483,3 +483,217 @@ if __name__ == '__main__':
 ```
 
 # 10. Decoradores
+
+Es el concepto más difícil para entender en los lenguajes de programación. 
+
+Un decorador es un closure, pero con parámetros adicionales.
+
+Def: Es una **Función** que recibe como parámetro otra **función**, le añade cosas, y retorna una **función** diferente.
+
+Ej:  En este caso se le agrega una función a la función original. Creando una Nested function. 
+
+```python
+def decorador(func):
+    def envoltura():
+        print("Esto se añade a mi función original")
+        func()
+    return envoltura
+
+def saludo():
+    print("!hola¡")
+
+def run():
+        
+
+    saludito = decorador(saludo)
+    saludito()
+
+if __name__ == '__main__':
+    run()
+```
+
+## Azucar sintactica (Syntactic Sugar)
+
+Se refiere a todas esas construcciones que no aportan nueva funcionalidad a un lenguaje, pero que permiten que sea más fácilmente utilizable por seres humanos.
+
+Muchas veces cuando estamos programando hay cosas muy complejas que no son fáciles de entender.
+
+Entonces existe una forma más bonita por así decirlo, de crear Decoradores.
+
+Ej:
+
+```python
+def decorador(func):
+    def envoltura():
+        print("Esto se ageraga a mi función original")
+        func()
+    return envoltura
+
+@decorador
+def saludo():
+    print("¡Hola!")
+
+def run():
+    saludo()
+
+if __name__ == '__main__':
+    run()
+```
+
+Otro ejemplo con decoradores
+
+```python
+def mayusculas(func):
+    def envoltura(texto):
+        return func(texto).upper()
+    return envoltura
+
+@mayusculas
+def mensaje(nombre):
+    return f'{nombre}, recibiste mensaje!'
+
+def run():
+    print(mensaje("Cesar"))
+
+if __name__ == '__main__':
+    run()
+```
+
+# 11. ****Programando decoradores****
+
+Vamos a realizar un ejemplo util de decoradores
+
+```python
+from datetime import datetime
+
+def execution_time(func):
+    def wrapper(*args, **kwargs):
+        initial_time = datetime.now()
+        func(*args, **kwargs)
+        final_time = datetime.now()
+        time_elapsed = final_time -initial_time
+        print("Time Elapsed: " + str(time_elapsed.total_seconds()) + " Seconds" )
+    return wrapper
+
+@execution_time
+def random_func():
+    for _ in range(1,100000000):
+        pass
+        # print(_)
+
+@execution_time
+def sum(a: int, b: int) -> int:
+    # print( a + b )
+    return a + b
+
+@execution_time
+def saludo(nombre='Camilo'):
+    print(f'Hola {nombre}')
+
+def run():
+    saludo("Polola")
+    random_func()
+    x = sum(10000,10)
+    print(x)
+
+if __name__ == '__main__':
+    run()
+```
+
+# ⛳ 12. Iteradores
+
+Los iterables son todos los objetos que se pueden recorrer en un ciclo. Ej: listas, diccionarios, tuplas, strings. Todos los iterables pueden convertirse en itardores.
+
+Es una estructura de datos para guardar datos infinitos.
+
+Cuando hacemos un ciclo for, lo que hace python internamente es crear un while iterator: Recorriéndolo hasta que tenga una excepción.
+
+```python
+#Creating iterator
+my_list = [1,2,3,4,5]
+my_iter = iter(my_list)
+
+# print(next(my_list))
+
+#Itering interator
+while True:
+    try:
+        element = next(my_iter)
+        print(element)
+    except StopIteration:
+        break
+```
+
+```python
+#This is sintatic Sugar :D
+for element in my_list:
+    print(element)
+```
+
+## ¿Cómo construyo un iterador?
+
+```python
+class EvenNumbers:
+    """ Clase que implementa un iterador de todos 
+    los numeros pares hasta un máximo"""
+
+    def __init__(self, max=None):
+        self.max = max
+
+    def __iter__(self):
+        self.num = 0
+        return self
+
+    def __next__(self):
+        if not self.max or self.num <= self.max:
+            result = self.num
+            self.num += 2
+            return result
+        else:
+            raise StopIteration
+```
+
+## Ventajas de usar iteradores
+
+En el iterador puedo guardar la totalidad de los números pares de mi computadora, no usan mucha memoria. Es cómo las imágenes svg. Tengo una función matemática que explica cómo sacar los siguientes elementos. 
+
+# 13. La sucesión de Fibonacci.
+
+Cada elemento de la sucesión es el resultado de sumar los dos números anteriores.
+
+# 14. Generadores “Sugar Syntax” de los iteradores
+
+Un generador es un cómo un iterador sólo que escrito de manera más simple y más elegante. :3 . Con generadores no es tan difícil almacenar secuencias infinitas cómo si lo era con los iteradores.
+
+Son funciones, a diferencia de los iteradores que son clases, esto porqué crear funciones es mucho más fácil que crear clases, una clase necesita más sintaxis más densidad de código etc. En cambio con una función nosotros sómos más libres podemos jugar un poco más con el código, en este caso tenemos un generador llamado `my_ge()`  y es un ejemplo de generadores, así está documentada esta función y hace lo siguiente:
+
+```python
+def my_gen():
+    """This is an example of generators
+    """
+    print("Hello World!")
+    n = 0
+    yield n  #This keyword is similar to return, except that this doesn't finish the function, 
+    
+    print("hello heave!")
+    n = 1
+    yield n
+
+    print("Hello hell")
+    n = 2
+    yield n
+
+def run ():
+    a = my_gen()
+    print(next(a))
+    print(next(a))
+    print(next(a))
+    # print(next(a)) StopIteration
+
+if __name__ == '__main__':
+    run()
+```
+
+## Generator expresions
+
+# 15. Mejorando nuestra sucesión de Fiboacci
