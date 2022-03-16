@@ -1,9 +1,4 @@
-from itertools import count
 import time
-from unittest.mock import seal
-
-from matplotlib.pyplot import ylabel
-
 
 def fibo_gen():
     n1 = 0
@@ -20,12 +15,16 @@ def fibo_gen():
         else:
             aux = n1 + n2
             n1 , n2  = n2, aux
-            
-
+            counter +=1
+            yield aux
 
 
 def run():
-    pass
+    fibonacci = fibo_gen()
+    for e in fibonacci:
+        prnt(e)
+        time.sleep(1)
+    
 
 
 
