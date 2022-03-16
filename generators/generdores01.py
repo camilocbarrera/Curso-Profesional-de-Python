@@ -26,7 +26,7 @@ def run ():
     print(next(a))
     print(next(a))
     print(next(a))
-    prin t(next(a)) StopIteration
+    # print(next(a)) StopIteration
 
 
 if __name__ == '__main__':
