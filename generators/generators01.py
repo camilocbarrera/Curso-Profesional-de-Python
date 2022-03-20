@@ -22,9 +22,8 @@ def fibo_gen():
 def run():
     fibonacci = fibo_gen()
     for e in fibonacci:
-        prnt(e)
+        print(e)
         time.sleep(1)
-    
 
 
 
