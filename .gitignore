@@ -1,2 +1,3 @@
-/venv
-/py_cache
+venv/
+py_cache/
+.idea/
