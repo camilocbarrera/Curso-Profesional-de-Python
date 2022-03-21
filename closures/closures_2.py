@@ -20,6 +20,7 @@ def run ():
     div_10 = make_division_by(18)
     print(div_10(54))
     
+my_str :str = "Hola"
 
 if __name__ == '__main__':
     run()
