@@ -6,8 +6,10 @@ my_set.update((4, 7, 8))
 
 my_set.update((4, 7, 8), {11, 4})
 print(my_set)
-
-
+my_set.remove(4) # It works just when the element exists in the set
+print(my_set)
+my_set.discard(90) # Discartd is usefull when the element doesn't exist.
+print(my_set)
 # my_set_empty = {}  # This is a dictionary
 # print(type(my_set_empty))
 # my_set_empty2 = set()
