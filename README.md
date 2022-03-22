@@ -12,9 +12,9 @@ Es hora de conocer una de las clasificaciones más conocidas, existe compilado v
 
 Ej: en C++  creamos na función void main. y la palabra clave cout
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0ac95a27-bb82-46ad-b3e7-6b369cad533e/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled.png)
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c6c23629-9bf8-4e47-8a10-8878656c266a/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%201.png)
 
 c++ Es un lenguaje compilado, quiere decir que convierte el código de c++  y lo convierte a binario al lenguaje de la computadora.
 
@@ -24,7 +24,7 @@ Python en cambio no entra en este grupo. Python es interpretado.
 
 Ej: al hace un hola mundo no lo pasa de una a instrucciones maquina si no que usa un lenguaje llamado bytecode, el cual puede ser leído por el interprete de python y es leído por una maquina virtual. Esta maquina virtual puede ser ejecutado en diferentes sistemas operativos. Solo se necesita el lenguaje y el interprete.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5af5a48c-e519-44c1-852e-5135eec7d5d1/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%202.png)
 
 Cuando hablamos de lenguajes interpretados siempre tenemos un intermediario, un interprete.
 
@@ -69,13 +69,13 @@ Denota el que una carpeta es un paquete. Si una carpeta no tiene este paquete py
 
 Ej: Supongamos que vamos a construir una nave espacial.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/14fdb60a-06f6-47cd-b49d-836d0a5bff28/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%203.png)
 
 Observemos que  las funcionalidades se pueden segmentar de tal forma que todo quede aislado, generando alta cohesión y bajo acoplamiento.
 
 Esto en una estructura de carpetas se vería así:
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b7a63861-a974-4ef4-93d2-5c1e69ca8294/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%204.png)
 
 Exploración espacial es un paquete, el archivo tunder .py (__init__.py) Y los módulos de nuestro programa.
 
@@ -87,11 +87,11 @@ La estructura de carpetas depende del proyecto y del framwork que uno use.
 
 Pensemos un momento en las estructuras de datos mutables (Listas o arreglos). Los tipos de datos primitivos.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/e2ffa7b1-187b-4aa7-84e0-2c2ed57684f9/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%205.png)
 
 Un lenguaje de programación tendrá un tipado diferente de acuerdo a cómo trata a los tipos  de datos que tenemos en un programa.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ae63882e-8ad0-4cae-8994-18d014df833c/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%206.png)
 
  Python es de tipado fuerte y dinámico. 
 
@@ -101,7 +101,7 @@ El proceso de un lenguaje compilado.
 2. Se pasa a código maquina 
 3. Pasa a nuestra computadora (llamado tiempo de ejecución). En donde podemos ver a nuestro programa funcionando.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/28416b32-dd78-41aa-9b63-3b1f2b50cd1e/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%207.png)
 
 ## Static
 
@@ -199,7 +199,7 @@ def run():
 run()
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/80c17a39-7091-4ebd-9932-77701bc86527/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%208.png)
 
 ## Static Typing
 
@@ -346,7 +346,7 @@ Found 1 error in 1 file (checked 1 source file)
 
 El resultado quiere decir que ha encontrado un error de compatibilidad de datos, en este caso se esperaba un string, pero le estamos pasando un entero.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/23898edd-4223-4779-bafc-57626e3c6818/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%209.png)
 
 ```python
 """Python module to check  if a number is prime :3"""
@@ -421,7 +421,7 @@ print(z)
 5
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/8ae05c75-027d-4cdb-bf0a-066a8c3d02e0/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%2010.png)
 
 # 8. Closures
 
@@ -433,11 +433,11 @@ Es una técnica que se da cuando una variable que está en un scope superior, es
 
 Aunque ese scope sea eliminado después incluso.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/24fa9a80-1ebb-442f-a1a1-b8190b458c74/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%2011.png)
 
 En este ejemplo vemos que aunque se elimine la función main, yo puedo seguir accediendo.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16dd53d8-5242-4f63-aaca-e0be0fc59fc1/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%2012.png)
 
 ## Reglas para encontrar un closure
 
@@ -451,7 +451,7 @@ Este es un ejemplo de una prueba técnica:
 
 Puedo crear una variable para asignar el primer valor de x y luego usar esa variable para usar la segunda función nested.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/6d6194ec-9471-41a3-922f-3e5e4f8ff494/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%2013.png)
 
 ## ¿Donde aparecen los Closures?
 
@@ -733,7 +733,7 @@ if __name__ == "__main__":
 
 Un set es una Estructura de datos de tipo colección de elementos únicos que deben ser **inmutables**
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d90b7097-2812-4afd-8a90-0a43618b9985/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%2014.png)
 
 Los elementos de la derecha hace que se convierta un set.
 
@@ -827,7 +827,7 @@ print(f'Day: {my_day.day} , Month: {my_day.month} , Year: {my_day.year} ')
 
 ## Formatos de fecha
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/126aede4-481b-49e7-9bcf-10bf38a7c03e/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%2015.png)
 
 ```python
 # import datetime
@@ -854,6 +854,6 @@ print(f'Estamos en el año {my_stryear}')
 
 # 20. Time Zones
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0943ff6a-cc02-43c9-b331-807abda32bdf/Untitled.png)
+![Untitled](https://github.com/camilocbarrera/Curso-Profesional-de-Python/blob/main/images/Untitled%2016.png)
 
 La mejor forma de operar sobre cambios de zonas horarias es con el módulo `pytz` ideal para estos casos de uso.
