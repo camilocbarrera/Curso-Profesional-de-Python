@@ -429,7 +429,7 @@ Es un concepto usado en backend y ciencia de datos
 
 ## Nested functions
 
-Es una tecnica que se da cuando una variable que está en un scope superior, es recordada por una función que está en un scope inferior.
+Es una técnica que se da cuando una variable que está en un scope superior, es recordada por una función que está en un scope inferior.
 
 Aunque ese scope sea eliminado después incluso.
 
@@ -697,3 +697,163 @@ if __name__ == '__main__':
 ## Generator expresions
 
 # 15. Mejorando nuestra sucesión de Fiboacci
+
+```python
+import time
+
+def fibo_gen():
+    n1 = 0
+    n2 = 1
+    counter = 0
+    while True:
+        if counter == 0:
+            counter += 1
+            yield n1
+        
+        elif counter == 1:
+            counter += 1
+            yield n2
+        else:
+            aux = n1 + n2
+            n1 , n2  = n2, aux
+            counter +=1
+            yield aux
+
+def run():
+    fibonacci = fibo_gen()
+    for e in fibonacci:
+        print(e)
+        time.sleep(1)
+
+if __name__ == "__main__":
+    run()
+```
+
+# 16. Sets
+
+Un set es una Estructura de datos de tipo colección de elementos únicos que deben ser **inmutables**
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/d90b7097-2812-4afd-8a90-0a43618b9985/Untitled.png)
+
+Los elementos de la derecha hace que se convierta un set.
+
+## ¿Cómo puedo crear un set?
+
+```python
+my_set = {3, 3, 6}
+my_set.add(7)
+my_set.update([1, 2, 5])
+
+my_set.update((4, 7, 8))
+
+my_set.update((4, 7, 8), {11, 4})
+print(my_set)
+my_set_empty = {}  # This is a dictionary
+print(type(my_set_empty))
+my_set_empty2 = set()
+print(type(my_set_empty2))
+my_set_two = {[1, 2], 3, 5, 6, 5}
+
+```
+
+Cuando uso el metodo add y agrego una lista, el interprete extrae cada elemento de la listay verifica is existe y los agrega.
+
+# 17. Operaciones con sets
+
+Union:
+
+Interesección
+
+Diferencia
+
+Diferencia Simétrica (Todo menos la interseción)
+
+```python
+set_a = {1, 2, 3}
+set_b = {4, 5, 6, 3, 1}
+
+print(set_a.union(set_b))
+print(set_a | set_b)
+print(set_a.intersection(set_b))
+print(set_a & set_b)
+print(set_a-set_b)
+print(set_a.difference(set_b))
+print(set_a.symmetric_difference(set_b))
+print(set_a ^ set_b)
+```
+
+# 18. Eliminando los repetidos en una lista
+
+```python
+# This example is for elimintate duplicated elements in a list object in python
+
+def remove_duplicates(somelist):
+    without_duplicates = []
+    for element in somelist:
+        if element not in without_duplicates:
+            without_duplicates.append(element)
+    return without_duplicates
+
+def remove_duplicates_with_sets(somelist):
+    return list(set(somelist))
+
+def run():
+    my_list = [1, 1, 1, 2, 3, 34, 5, 6, 66, 6, 6, ]
+    print(my_list)
+    print(remove_duplicates_with_sets(my_list))
+
+if __name__ == '__main__':
+    run()
+```
+
+# 19. Manejo de fechas
+
+¿Cómo manejar el tiempo en una aplicación?
+
+El modulo datetime contiene una clase llamada datetime, por eso es confuso cuando se llama. Ej:
+
+```python
+import datetime
+
+my_time = datetime.datetime.now()
+my_time_utc = datetime.datetime.utcnow()
+my_day = datetime.datetime.today()
+print(my_time)
+print(my_time_utc)
+print(my_day)
+
+print(f'Day: {my_day.day} , Month: {my_day.month} , Year: {my_day.year} ')
+```
+
+## Formatos de fecha
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/126aede4-481b-49e7-9bcf-10bf38a7c03e/Untitled.png)
+
+```python
+# import datetime
+from datetime import datetime
+
+my_time = datetime.now()
+my_time_utc = datetime.utcnow()
+my_day = datetime.today()
+print(my_time)
+print(my_time_utc)
+print(my_day)
+
+print(f'Day: {my_day.day} , Month: {my_day.month} , Year: {my_day.year} ')
+
+my_str = my_time.strftime('%d/%m/%Y')
+print(f'Formato LATAM: {my_str}')
+
+my_streu = my_time.strftime('%m/%d/%Y')
+print(f'Formato LATAM: {my_streu}')
+
+my_stryear = my_time.strftime('%Y')
+print(f'Estamos en el año {my_stryear}')
+```
+
+# 20. Time Zones
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0943ff6a-cc02-43c9-b331-807abda32bdf/Untitled.png)
+
+La mejor forma de operar sobre cambios de zonas horarias es con el módulo `pytz` ideal para estos casos de uso.
